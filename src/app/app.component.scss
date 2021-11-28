@@ -1,0 +1,31 @@
+/* Toolbar styling */
+header {
+    .mat-toolbar {
+        /* Material H1 is not large enough for the title,
+           make it bigger and slightly more condenced */
+        h1 {
+            font-size: 150%;
+            letter-spacing: -1px;
+
+            /* Aligh the icon with the text and make it larger,
+               pad on the right a little */
+            .mat-icon {
+                font-size: 130%;
+                vertical-align: bottom;
+                padding-right: 0.1em;
+            }
+
+            /* Merge the two OOs together */
+            span.oo {
+                letter-spacing: -5px;
+            }
+
+            /* Dim and shrink the domain to make it less prominent */
+            span.domain {
+                font-size: 80%;
+                font-weight: 300;
+                opacity: 50%;
+            }
+        }
+    }
+}
