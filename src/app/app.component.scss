@@ -3,16 +3,18 @@ header {
     .mat-toolbar {
         /* Material H1 is not large enough for the title,
            make it bigger and slightly more condenced */
-        h1 {
+        a {
+            color: inherit;
             font-size: 150%;
             letter-spacing: -1px;
+            text-decoration: none;
 
-            /* Aligh the icon with the text and make it larger,
+            /* Align the icon with the text and make it larger,
                pad on the right a little */
             .mat-icon {
                 font-size: 130%;
-                vertical-align: bottom;
                 padding-right: 0.1em;
+                vertical-align: bottom;
             }
 
             /* Merge the two OOs together */
