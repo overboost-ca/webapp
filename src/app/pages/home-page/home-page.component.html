@@ -1,0 +1,29 @@
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="ovr-tree">
+    <!-- Document leaf template -->
+    <mat-tree-node *matTreeNodeDef="let leaf" matTreeNodeToggle>
+        <a mat-button color="primary" [routerLink]="['/content', contentRoot, leaf.path]">
+            <mat-icon>list_alt</mat-icon>
+            {{leaf.name}}
+        </a>
+    </mat-tree-node>
+
+    <!-- Expandable category template -->
+    <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChildren">
+        <div class="mat-tree-node">
+            <button mat-button matTreeNodeToggle color="primary" [attr.aria-label]="'Toggle ' + node.name">
+                <mat-icon class="mat-icon-rtl-mirror">
+                    {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                </mat-icon>
+                <mat-icon>
+                    {{treeControl.isExpanded(node) ? 'folder_open' : 'folder'}}
+                </mat-icon>
+                {{node.name}}
+            </button>
+        </div>
+        <!-- There is inline padding applied to this div using styles.
+            This padding value depends on the mat-icon-button width.  -->
+        <div [class.ovr-tree-invisible]="!treeControl.isExpanded(node)" role="group">
+            <ng-container matTreeNodeOutlet></ng-container>
+        </div>
+    </mat-nested-tree-node>
+</mat-tree>

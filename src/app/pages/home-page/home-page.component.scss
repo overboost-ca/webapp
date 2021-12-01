@@ -1,0 +1,16 @@
+/* Pad the tree and limit max width */
+.ovr-tree {
+    margin: 0 auto;
+    max-width: 50em;
+    padding: .5em 0;
+
+    /* Hide nested nodes */
+    .ovr-tree-invisible {
+        display: none;
+    }
+
+    /* Offset nested nodes by the width of the chevron */
+    .mat-nested-tree-node div[role="group"] {
+        padding-left: 24px;
+    }
+}

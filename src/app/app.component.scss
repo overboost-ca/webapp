@@ -1,5 +1,14 @@
+/* Force a vertical layout with overflow in the main element */
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 /* Toolbar styling */
 header {
+    z-index: 5;
+
     .mat-toolbar {
         /* Material H1 is not large enough for the title,
            make it bigger and slightly more condenced */
@@ -30,4 +39,10 @@ header {
             }
         }
     }
+}
+
+/* Allow overflow in the main element */
+main {
+    flex: 1;
+    overflow: hidden scroll;
 }

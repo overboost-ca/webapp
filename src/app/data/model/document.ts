@@ -6,5 +6,5 @@ export interface Document {
     path: string,
 
     /** Document title. */
-    title: string
+    name: string
 }

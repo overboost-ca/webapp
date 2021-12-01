@@ -39,7 +39,7 @@ export class CategoryService {
                 (doc) => {
                   return {
                     path: doc.getAttribute('name') ?? '',
-                    title: doc.getAttribute('title') ?? ''
+                    name: doc.getAttribute('title') ?? ''
                   }
                 })
             }
