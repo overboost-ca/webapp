@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  contentUrl: 'https://photo.platonoff.com/Auto/',
   production: false
 };
 

@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DataModule } from './data/data.module';
 import { ContentPageComponent } from './pages/content-page/content-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
@@ -22,6 +23,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     MatToolbarModule,
 
     AppRoutingModule,
+    DataModule
   ],
   providers: [],
   bootstrap: [AppComponent]

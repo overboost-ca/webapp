@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CategoryService } from '../../data/category.service';
+
+/**
+ * Displays the root list of categories.
+ */
 @Component({
   selector: 'ovr-home-page',
   template: `
@@ -12,9 +17,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private categoryService: CategoryService
+  ) { }
 
   ngOnInit(): void {
+    this.categoryService.fetchAll()
+      .subscribe(result => {
+        console.log(result)
+      });
   }
 
 }
