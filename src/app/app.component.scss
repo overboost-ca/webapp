@@ -43,6 +43,21 @@ header {
 
 /* Allow overflow in the main element */
 main {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     overflow: hidden scroll;
+
+    /* Fill the screen with content */
+    section.content {
+        flex: 1;
+    }
+
+    /* Tiny centered copyright footer */
+    footer {
+        font-size: 80%;
+        opacity: 50%;
+        padding: 1em .5em .5em .5em;
+        text-align: center;
+    }
 }
