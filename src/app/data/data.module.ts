@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import { CategoryService } from './category.service';
+import { DocumentService } from './document.service';
 
 @NgModule({
   declarations: [],
@@ -10,6 +11,6 @@ import { CategoryService } from './category.service';
     CommonModule,
     HttpClientModule
   ],
-  providers: [CategoryService]
+  providers: [CategoryService, DocumentService]
 })
 export class DataModule { }
