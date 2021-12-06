@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: 'content/:category/:document',
     component: ContentPageComponent,
-    resolve: { document: ContentResolver }
+    resolve: { content: ContentResolver }
   }
 ];
 

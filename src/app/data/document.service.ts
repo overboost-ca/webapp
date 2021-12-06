@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 
 import { PictureSet } from './model/picture-set';
 
-const TITLE_REGEX = /^(?<year>\d\d\d\d)(?<month>\d\d)(?<day>\d\d)\.(?<title>.*)$/;
+const TITLE_REGEX = /^(?<year>\d\d\d\d)(?<month>\d\d)(?<day>\d\d)\w?\.(?<title>.*)$/;
 
 /**
  * Handles document load and parsing.
@@ -25,7 +25,6 @@ export class DocumentService {
    */
   load(category: string, path: string): Observable<PictureSet> {
     let result = this.toPictureSet(path);
-    console.log(result);
 
     return of(result);
   }
