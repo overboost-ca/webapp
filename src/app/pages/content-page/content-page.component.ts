@@ -7,6 +7,7 @@ import { PictureSet } from '../../data/model/picture-set';
   selector: 'ovr-content-page',
   template: `
       <h1>{{ content?.title }}</h1>
+      <div [innerHTML]="content?.intro"></div>
   `,
   styles: [
   ]

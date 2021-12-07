@@ -4,14 +4,13 @@ import { Observable, map } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { Category } from './model/category';
-import { Document } from './model/document';
 
 /**
  * Handles document category download and parsing.
  */
 @Injectable({ providedIn: 'root' })
 export class CategoryService {
-  private rootUrl: string = '';
+  private rootUrl!: string;
 
   constructor(
     private httpClient: HttpClient
@@ -26,9 +25,9 @@ export class CategoryService {
    */
   fetchAll(): Observable<Category[]> {
     return this.httpClient.get(`${this.rootUrl}.categories.xml`, { responseType: 'text' }).pipe(
-      map<any, Category[]>(result =>
+      map<any, Category[]>(xmlText =>
         this.toElements(
-          new DOMParser().parseFromString(result, 'text/xml').firstElementChild,
+          new DOMParser().parseFromString(xmlText, 'text/xml').firstElementChild,
           'category',
           (cat) => {
             return {
