@@ -1,0 +1,16 @@
+<header>
+    <mat-toolbar>
+        <a mat-icon-button [routerLink]="['/']">
+            <mat-icon>arrow_back</mat-icon>
+        </a>
+        <h1>{{ content?.title }}</h1>
+    </mat-toolbar>
+</header>
+
+<section *ngIf="content?.intro" class="intro" [innerHTML]="content?.intro"></section>
+
+<mat-card *ngFor="let picture of content?.pictures">
+    <img mat-card-image [src]="content.path + '/' + picture.path">
+    <mat-card-title>{{ picture.title }}</mat-card-title>
+    <mat-card-content [innerHTML]="picture.description"></mat-card-content>
+</mat-card>

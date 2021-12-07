@@ -5,12 +5,8 @@ import { PictureSet } from '../../data/model/picture-set';
 
 @Component({
   selector: 'ovr-content-page',
-  template: `
-      <h1>{{ content?.title }}</h1>
-      <div [innerHTML]="content?.intro"></div>
-  `,
-  styles: [
-  ]
+  templateUrl: 'content-page.component.html',
+  styleUrls: ['content-page.component.scss']
 })
 export class ContentPageComponent implements OnInit {
   content!: PictureSet;

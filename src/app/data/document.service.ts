@@ -34,7 +34,7 @@ export class DocumentService {
    */
   load(category: string, path: string): Observable<PictureSet> {
     let result = this.toPictureSet(path);
-    return this.httpClient.get(`${this.rootUrl}${path}/.content.xml`, { responseType: 'text' }).pipe(
+    return this.httpClient.get(`${result.path}/.content.xml`, { responseType: 'text' }).pipe(
       map<any, PictureSet>(xmlText => {
         let xml = new DOMParser().parseFromString(xmlText, 'text/xml');
         result.intro = xml.getElementsByTagName('description')[0]?.innerHTML;
@@ -110,6 +110,7 @@ export class DocumentService {
     } = TITLE_REGEX.exec(path)?.groups ?? {};
 
     return {
+      path: `${this.rootUrl}${path}`,
       date: this.toDate(result),
       title: (result.title ?? path).replace(/_/g, ' '),
       pictures: []

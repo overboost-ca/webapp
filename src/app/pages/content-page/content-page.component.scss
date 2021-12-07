@@ -1,0 +1,16 @@
+header {
+    /* Header background should match the rest of the page */
+    .mat-toolbar {
+        background-color: unset;
+    }
+}
+
+/* Pad the intro */
+section.intro {
+  margin: 1em 2em;
+}
+
+/* Pad the cards slightly wider than the intro */
+.mat-card {
+    margin: 2em 1em;
+}

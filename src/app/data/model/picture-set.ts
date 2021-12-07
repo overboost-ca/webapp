@@ -4,6 +4,9 @@ import { Picture } from './picture';
  * Picture set descriptor.
  */
 export interface PictureSet {
+    /** Original path. */
+    path: string,
+
     /** Page title. */
     title: string,
 
