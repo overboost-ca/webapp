@@ -1,16 +1,22 @@
 <header>
     <mat-toolbar>
-        <a mat-icon-button [routerLink]="['/']">
-            <mat-icon>arrow_back</mat-icon>
-        </a>
-        <h1>{{ content?.title }}</h1>
+        <div class="title">
+            <a mat-icon-button [routerLink]="['/']">
+                <mat-icon>arrow_back</mat-icon>
+            </a>
+            <h1>{{ content?.title }}</h1>
+        </div>
+        <span class="published">{{ content?.date | date:'mediumDate' }}</span>
     </mat-toolbar>
 </header>
 
 <section *ngIf="content?.intro" class="intro" [innerHTML]="content?.intro"></section>
 
-<mat-card *ngFor="let picture of content?.pictures">
+<mat-card *ngFor="let picture of content?.pictures; let i = index">
     <img mat-card-image [src]="content.path + '/' + picture.path">
-    <mat-card-title>{{ picture.title }}</mat-card-title>
+    <mat-card-title matBadge="{{ i + 1 }}" matBadgeSize="large"  matBadgePosition="above before" matBadgeColor="accent">
+        <span>{{ picture.title }}</span>
+        <span class="published">{{ picture.date | date:'mediumDate' }}</span>
+    </mat-card-title>
     <mat-card-content [innerHTML]="picture.description"></mat-card-content>
 </mat-card>
