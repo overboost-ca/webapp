@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { PictureSet } from '../../data/model/picture-set';
@@ -8,7 +8,7 @@ import { PictureSet } from '../../data/model/picture-set';
   templateUrl: 'content-page.component.html',
   styleUrls: ['content-page.component.scss']
 })
-export class ContentPageComponent implements OnInit {
+export class ContentPageComponent {
   content!: PictureSet;
 
   constructor(
@@ -16,11 +16,6 @@ export class ContentPageComponent implements OnInit {
   ) {
     activatedRoute.data.subscribe(data => {
       this.content = data['content'];
-      console.log(this.content);
     })
   }
-
-  ngOnInit(): void {
-  }
-
 }

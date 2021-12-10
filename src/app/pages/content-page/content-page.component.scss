@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 828px;
 }
 
 /* Shrink, dim and right align the publishing date. */
@@ -46,9 +46,11 @@ section.intro {
     /* Switch the title layout to flex to allow right aligned date */
     .mat-card-title {
         display: flex;
-        margin-left: .5em;
-        padding-left: .5em;
+        margin-bottom: 0.5em;
+        margin-left: 0.5em;
+        padding-left: 0.5em;
 
+        /* Position the badge at the edge of image and title, sticking out by 1/3rd on the left */
         span.mat-badge-content {
             height: 2em;
             left: -42px;
@@ -58,7 +60,51 @@ section.intro {
         }
     }
 
+    /* Align the content with the title */
     .mat-card-content {
         padding-left: 1.8em;
+    }
+}
+
+/* Horizontal card layout on wider screens */
+$layout-breakpoint: 1200px;
+
+/* Allow for wider cards if there's enough space */
+@media (min-width: $layout-breakpoint) {
+    :host {
+        max-width: 1320px;
+    }
+
+    /* Set the card height to the average image size */
+    .mat-card {
+        height: 600px;
+        margin: 1.5em 2em;
+
+        /* Align the image to the left side of the container, matching its height */
+        .mat-card-image {
+            border-bottom-left-radius: inherit;
+            border-top-right-radius: unset;
+            float: left;
+            height: calc(100% + 32px);
+            padding-right: 40px;
+            width: unset;
+        }
+
+        /* Pad the title at the top some more */
+        .mat-card-title {
+            margin-left: unset;
+            margin-top: 0.5em;
+            padding-left: unset;
+
+            /* Position the badge at the edge of image and title, sticking out by 1/3rd on top */
+            span.mat-badge-content {
+                left: -48px;
+            }
+        }
+
+        /* Align the content with the title */
+        .mat-card-content {
+            padding-left: unset;
+        }
     }
 }

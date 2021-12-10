@@ -14,7 +14,7 @@
 
 <mat-card *ngFor="let picture of content?.pictures; let i = index">
     <img mat-card-image [src]="content.path + '/' + picture.path">
-    <mat-card-title matBadge="{{ i + 1 }}" matBadgeSize="large"  matBadgePosition="above before" matBadgeColor="accent">
+    <mat-card-title matBadge="{{ i + 1 }}" matBadgeSize="large"  matBadgePosition="above before">
         <span>{{ picture.title }}</span>
         <span class="published">{{ picture.date | date:'mediumDate' }}</span>
     </mat-card-title>
