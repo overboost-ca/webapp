@@ -8,7 +8,7 @@ import { PictureSet } from './model/picture-set';
 import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y/input-modality/input-modality-detector';
 
 const DATE_REGEX = /^(?<day>\d\d)\.(?<month>\d\d)\.(?<year>\d\d\d\d)$/;
-const TITLE_REGEX = /^(?<year>\d\d\d\d)(?<month>\d\d)(?<day>\d\d)\w?\.(?<title>.*)$/;
+const TITLE_REGEX = /^(?<year>\d\d\d\d)(?<month>\d\d)(?<day>\d\d)\w?[\.-](?<title>.*)$/;
 
 /**
  * Handles document load and parsing.
@@ -112,7 +112,7 @@ export class DocumentService {
     return {
       path: `${this.rootUrl}${path}`,
       date: this.toDate(result),
-      title: (result.title ?? path).replace(/_/g, ' '),
+      title: (result.title ?? path).replace(/[_-]/g, ' '),
       pictures: []
     };
   }
