@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  contentUrl: 'https://photo.platonoff.com/Auto/',
+  contentUrl: 'https://photo.platonoff.com/overboost-content/',
   production: false
 };
 

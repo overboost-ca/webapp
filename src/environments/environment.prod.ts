@@ -1,4 +1,4 @@
 export const environment = {
-  contentUrl: 'https://photo.platonoff.com/Auto/',
+  contentUrl: '/content/',
   production: true
 };

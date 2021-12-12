@@ -33,11 +33,12 @@ export class DocumentService {
    * @returns picture set observable
    */
   load(category: string, path: string): Observable<PictureSet> {
-    let result = this.toPictureSet(path);
-    return this.httpClient.get(`${result.path}/.content.xml`, { responseType: 'text' }).pipe(
+    let result = this.toPictureSet(category, path);
+    return this.httpClient.get(`${result.path}/content.xml`, { responseType: 'text' }).pipe(
       map<any, PictureSet>(xmlText => {
         let xml = new DOMParser().parseFromString(xmlText, 'text/xml');
         result.intro = xml.getElementsByTagName('description')[0]?.innerHTML;
+        result.title = xml.firstElementChild?.getAttribute('title') ?? result.title;
 
         let pictures = xml.getElementsByTagName('picture');
         for (let i = 0; i < pictures.length; i++) {
@@ -98,10 +99,11 @@ export class DocumentService {
   /**
    * Converts a document path into an empty picture set.
    *
+   * @param category category folder name
    * @param path document folder name
    * @returns blank picture set with a date and title populated
    */
-  private toPictureSet(path: string): PictureSet {
+  private toPictureSet(category: string, path: string): PictureSet {
     let result: {
       year?: string,
       month?: string,
@@ -110,7 +112,7 @@ export class DocumentService {
     } = TITLE_REGEX.exec(path)?.groups ?? {};
 
     return {
-      path: `${this.rootUrl}${path}`,
+      path: `${this.rootUrl}${category}/${path}`,
       date: this.toDate(result),
       title: (result.title ?? path).replace(/[_-]/g, ' '),
       pictures: []

@@ -24,7 +24,7 @@ export class CategoryService {
    * @returns category list observable
    */
   fetchAll(): Observable<Category[]> {
-    return this.httpClient.get(`${this.rootUrl}.categories.xml`, { responseType: 'text' }).pipe(
+    return this.httpClient.get(`${this.rootUrl}categories.xml`, { responseType: 'text' }).pipe(
       map<any, Category[]>(xmlText =>
         this.toElements(
           new DOMParser().parseFromString(xmlText, 'text/xml').firstElementChild,
