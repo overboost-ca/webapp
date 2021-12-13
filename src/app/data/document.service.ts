@@ -60,7 +60,7 @@ export class DocumentService {
     month?: string,
     year?: string
   }): Date {
-    return new Date(Date.parse(`${parsedDate.year}-${parsedDate.month}-${parsedDate.day}`));
+    return new Date(`${parsedDate.month}/${parsedDate.day}/${parsedDate.year}`);
   }
 
   /**
