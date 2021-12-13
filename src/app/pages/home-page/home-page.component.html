@@ -1,3 +1,11 @@
+<section class="intro">
+    <p>Welcome to a collection DIY articles and illustrations on maintenance, repairs and
+        upgrades for glorious Nordic cars.</p>
+    <p>Originally published at
+        <a href="https://photo.platonoff.com/Auto/">saab.platonoff.com</a>.
+    </p>
+</section>
+
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="ovr-tree">
     <!-- Document leaf template -->
     <mat-tree-node *matTreeNodeDef="let leaf" matTreeNodeToggle>
@@ -27,3 +35,35 @@
         </div>
     </mat-nested-tree-node>
 </mat-tree>
+
+<section class="disclaimer">
+    <mat-card>
+        <mat-card-content>
+            <h3>Disclaimer</h3>
+
+            <p>
+                While detailed, these are just guides. They were not intended as a reference,
+                but rather a reflection of personal experiences we collected while working on
+                the cars we owned or helped build. For technical information,
+                use the <a href="https://saabwisonline.com/">official factory manual</a> or other
+                applicable sources. Always exercise safety while working on a car and use your
+                common sense. We assume no responsibility for any outcome of reader's actions.
+            </p>
+
+            <p>No part of these materials can be further reproduced or published without a
+                written consent of their respective authors. Pull requests are welcome.
+                If you wish to reference or license any of the materials for your business,
+                be sure to <a href="mailto:license@overboost.ca">obtain</a>
+                our permission first. We would also appreciate you letting us know if you
+                choose to add a permanent link to us from your website.</p>
+
+            <p>For any any technical or administrative questions, do not hesitate to
+                <a href="mailto:info@overboost.ca">email us</a>. You can also find
+                Dmitry on many automotive forums, such as
+                <a href="https://www.saabcentral.com/">Saab Central</a>,
+                <a href="https://www.saablink.net/">Saab Link</a>,
+                <a href="https://www.saabnet.com/">Saab Network</a>.
+            </p>
+        </mat-card-content>
+    </mat-card>
+</section>

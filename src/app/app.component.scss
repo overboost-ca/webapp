@@ -38,6 +38,19 @@ header {
                 opacity: 50%;
             }
         }
+
+        /* Right align the Github button */
+        .github {
+            margin-left: auto;
+
+            /* Tweak the height of the SVG to center inside the button */
+            svg {
+                height: 32px;
+                fill: white;
+                padding-bottom: 4px;
+                width: 32px;
+            }
+        }
     }
 }
 
@@ -57,7 +70,7 @@ main {
     footer {
         font-size: 80%;
         opacity: 50%;
-        padding: 1em .5em .5em .5em;
+        padding: 1em 0.5em 0.5em 0.5em;
         text-align: center;
     }
 }

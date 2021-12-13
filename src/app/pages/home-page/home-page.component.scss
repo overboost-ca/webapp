@@ -1,9 +1,18 @@
-/* Pad the tree and limit max width */
-.ovr-tree {
+/* Pad the compnent and limit max width */
+:host {
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
     max-width: 828px;
     padding: .5em 0;
+}
 
+/* Pad text sections */
+section {
+    margin: 1em 2em;
+}
+
+.ovr-tree {
     /* Hide nested nodes */
     .ovr-tree-invisible {
         display: none;
