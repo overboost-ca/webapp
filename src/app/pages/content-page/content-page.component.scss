@@ -5,34 +5,36 @@
     max-width: 828px;
 }
 
-/* Shrink, dim and right align the publishing date. */
-span.published {
-    margin-left: auto;
-    font-size: 66%;
-    font-weight: 300;
-    opacity: 50%;
-    white-space: nowrap;
-}
-
 header {
-    /* Header background should match the rest of the page */
-    .mat-toolbar {
-        background-color: unset;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 1em;
 
-        /* Pack the back button and the title together */
-        div.title {
-            align-items: center;
-            display: flex;
-            flex-direction: row;
+    /* Lined up the back button and the title */
+    div.title {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: row;
 
-            /* Tighten up title line spacing to fit two wrapped lines */
-            h1 {
-                line-height: 1em;
-                white-space: normal;
-            }
+        /* Tighten up title line spacing to fit two wrapped lines */
+        h1 {
+            margin: 0;
+            padding-top: 4px;
+            white-space: normal;
         }
     }
+
+    /* Shrink, dim and right align the publishing date. */
+    span.published {
+        font-weight: 300;
+        margin-left: auto;
+        padding-top: 12px;
+        opacity: 50%;
+        white-space: nowrap;
+    }
 }
+
 /* Pad the intro */
 section.intro {
     margin: 1em 2em;
@@ -70,7 +72,7 @@ $narrow-breakpoint: 440px;
     .mat-card {
         margin: 1em 1em;
     }
-}   
+}
 
 /* Horizontal card layout on wider screens */
 $wide-breakpoint: 1200px;

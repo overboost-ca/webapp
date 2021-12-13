@@ -1,13 +1,11 @@
 <header>
-    <mat-toolbar>
-        <div class="title">
-            <a mat-icon-button [routerLink]="['/']">
-                <mat-icon>arrow_back</mat-icon>
-            </a>
-            <h1>{{ content?.title }}</h1>
-        </div>
-        <span class="published">{{ content?.date | date:'mediumDate' }}</span>
-    </mat-toolbar>
+    <div class="title">
+        <a mat-icon-button [routerLink]="['/']">
+            <mat-icon>arrow_back</mat-icon>
+        </a>
+        <h1>{{ content?.title }}</h1>
+    </div>
+    <span class="published">{{ content?.date | date:'mediumDate' }}</span>
 </header>
 
 <section *ngIf="content?.intro" class="intro" [innerHTML]="content?.intro"></section>
