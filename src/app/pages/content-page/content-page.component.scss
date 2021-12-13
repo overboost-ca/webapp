@@ -5,6 +5,14 @@
     max-width: 828px;
 }
 
+/* Dim and right align the publishing date. */
+span.published {
+    font-weight: 300;
+    margin-left: auto;
+    opacity: 50%;
+    white-space: nowrap;
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -25,13 +33,9 @@ header {
         }
     }
 
-    /* Shrink, dim and right align the publishing date. */
+    /* Pad the publish date from the top */
     span.published {
-        font-weight: 300;
-        margin-left: auto;
         padding-top: 12px;
-        opacity: 50%;
-        white-space: nowrap;
     }
 }
 
@@ -49,6 +53,11 @@ section.intro {
         display: flex;
         font-size: 120%;
         margin-bottom: 0.5em;
+
+        /* Shrink the publishing date. */
+        span.published {
+            font-size: 80%;
+        }
     }
 
     /* Large, bold and dimmed counter in the right bottom corner */
