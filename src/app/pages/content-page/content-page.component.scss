@@ -33,7 +33,6 @@ header {
         }
     }
 }
-
 /* Pad the intro */
 section.intro {
     margin: 1em 2em;
@@ -41,36 +40,43 @@ section.intro {
 
 /* Pad the cards slightly wider than the intro */
 .mat-card {
-    margin: 1em 1em;
+    margin: 1em 0;
 
     /* Switch the title layout to flex to allow right aligned date */
     .mat-card-title {
         display: flex;
+        font-size: 120%;
         margin-bottom: 0.5em;
-        margin-left: 0.5em;
-        padding-left: 0.5em;
-
-        /* Position the badge at the edge of image and title, sticking out by 1/3rd on the left */
-        span.mat-badge-content {
-            height: 2em;
-            left: -42px;
-            line-height: 2em;
-            top: -42px;
-            width: 2em;
-        }
     }
 
-    /* Align the content with the title */
-    .mat-card-content {
-        padding-left: 1.8em;
+    /* Large, bold and dimmed counter in the right bottom corner */
+    span.slide-counter {
+        bottom: 0;
+        font-size: 120%;
+        font-weight: 700;
+        opacity: 0.2;
+        position: absolute;
+        padding-bottom: 12px;
+        padding-right: 12px;
+        right: 0;
     }
 }
 
+/* Reduced margins on phone screens */
+$narrow-breakpoint: 440px;
+
+@media (min-width: $narrow-breakpoint) {
+    /* Pads no longer have to match the screen width, add some gap there */
+    .mat-card {
+        margin: 1em 1em;
+    }
+}   
+
 /* Horizontal card layout on wider screens */
-$layout-breakpoint: 1200px;
+$wide-breakpoint: 1200px;
 
 /* Allow for wider cards if there's enough space */
-@media (min-width: $layout-breakpoint) {
+@media (min-width: $wide-breakpoint) {
     :host {
         max-width: 1320px;
     }
@@ -92,19 +98,7 @@ $layout-breakpoint: 1200px;
 
         /* Pad the title at the top some more */
         .mat-card-title {
-            margin-left: unset;
             margin-top: 0.5em;
-            padding-left: unset;
-
-            /* Position the badge at the edge of image and title, sticking out by 1/3rd on top */
-            span.mat-badge-content {
-                left: -48px;
-            }
-        }
-
-        /* Align the content with the title */
-        .mat-card-content {
-            padding-left: unset;
         }
     }
 }

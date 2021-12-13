@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,7 +22,6 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatBadgeModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,

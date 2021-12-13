@@ -14,9 +14,10 @@
 
 <mat-card *ngFor="let picture of content?.pictures; let i = index">
     <img mat-card-image [src]="content.path + '/' + picture.path">
-    <mat-card-title matBadge="{{ i + 1 }}" matBadgeSize="large"  matBadgePosition="above before">
+    <mat-card-title>
         <span>{{ picture.title }}</span>
         <span class="published">{{ picture.date | date:'mediumDate' }}</span>
     </mat-card-title>
     <mat-card-content [innerHTML]="picture.description"></mat-card-content>
+    <span class="slide-counter">{{ i + 1 }}</span>
 </mat-card>
