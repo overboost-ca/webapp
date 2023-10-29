@@ -16,6 +16,7 @@ export class ContentPageComponent {
   ) {
     activatedRoute.data.subscribe(data => {
       this.content = data['content'];
+      document.getElementById("main")?.scrollTo(0, 0);
     })
   }
 }
