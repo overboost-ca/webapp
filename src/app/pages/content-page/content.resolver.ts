@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  Resolve,
-  Router,
-  RouterStateSnapshot
-} from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
 
 import { DocumentService } from '../../data/document.service';
@@ -16,7 +11,7 @@ import { PictureSet } from '../../data/model/picture-set';
 @Injectable({
   providedIn: 'root'
 })
-export class ContentResolver implements Resolve<PictureSet> {
+export class ContentResolver  {
   constructor(
     private documentService: DocumentService
   ) { }
