@@ -4,9 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 import { PictureSet } from '../../data/model/picture-set';
 
 @Component({
-  selector: 'ovr-content-page',
-  templateUrl: 'content-page.component.html',
-  styleUrls: ['content-page.component.scss']
+    selector: 'ovr-content-page',
+    templateUrl: 'content-page.component.html',
+    styleUrls: ['content-page.component.scss'],
+    standalone: false
 })
 export class ContentPageComponent {
   content!: PictureSet;

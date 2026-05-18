@@ -17,9 +17,10 @@ interface TreeNode {
  * Displays the root list of categories.
  */
 @Component({
-  selector: 'ovr-home-page',
-  templateUrl: 'home-page.component.html',
-  styleUrls: ['home-page.component.scss']
+    selector: 'ovr-home-page',
+    templateUrl: 'home-page.component.html',
+    styleUrls: ['home-page.component.scss'],
+    standalone: false
 })
 export class HomePageComponent implements OnInit {
   contentRoot = CONTENT_ROOT;
