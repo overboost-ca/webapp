@@ -5,7 +5,6 @@ import { Observable, map, of } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Picture } from './model/picture';
 import { PictureSet } from './model/picture-set';
-import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y/input-modality/input-modality-detector';
 
 const DATE_REGEX = /^(?<day>\d\d)\.(?<month>\d\d)\.(?<year>\d\d\d\d)$/;
 const TITLE_REGEX = /^(?<year>\d\d\d\d)(?<month>\d\d)(?<day>\d\d)\w?[\.-](?<title>.*)$/;

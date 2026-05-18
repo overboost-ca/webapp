@@ -111,5 +111,7 @@
       }
     }
   },
-  "defaultProject": "overboost-angular"
+  "cli": {
+    "analytics": false
+  }
 }

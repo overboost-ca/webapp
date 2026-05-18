@@ -3,14 +3,14 @@
         <a mat-icon-button [routerLink]="['/']">
             <mat-icon>arrow_back</mat-icon>
         </a>
-        <h1>{{ content?.title }}</h1>
+        <h1>{{ content.title }}</h1>
     </div>
-    <span class="published">{{ content?.date | date:'mediumDate' }}</span>
+    <span class="published">{{ content.date | date:'mediumDate' }}</span>
 </header>
 
-<section *ngIf="content?.intro" class="intro" [innerHTML]="content?.intro"></section>
+<section *ngIf="content.intro" class="intro" [innerHTML]="content.intro"></section>
 
-<mat-card *ngFor="let picture of content?.pictures; let i = index">
+<mat-card *ngFor="let picture of content.pictures; let i = index">
     <img mat-card-image [src]="content.path + '/' + picture.path">
     <mat-card-title>
         <span>{{ picture.title }}</span>
