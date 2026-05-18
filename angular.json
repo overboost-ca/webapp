@@ -94,10 +94,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "overboost-angular:build:production"
+              "buildTarget": "overboost-angular:build:production"
             },
             "development": {
-              "browserTarget": "overboost-angular:build:development"
+              "buildTarget": "overboost-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -105,7 +105,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "overboost-angular:build"
+            "buildTarget": "overboost-angular:build"
           }
         }
       }
