@@ -1,21 +1,25 @@
 <header>
-    <div class="title">
-        <a mat-icon-button [routerLink]="['/']">
-            <mat-icon>arrow_back</mat-icon>
-        </a>
-        <h1>{{ content.title }}</h1>
-    </div>
-    <span class="published">{{ content.date | date:'mediumDate' }}</span>
+  <div class="title">
+    <a mat-icon-button [routerLink]="['/']">
+      <mat-icon>arrow_back</mat-icon>
+    </a>
+    <h1>{{ content.title }}</h1>
+  </div>
+  <span class="published">{{ content.date | date:'mediumDate' }}</span>
 </header>
 
-<section *ngIf="content.intro" class="intro" [innerHTML]="content.intro"></section>
+@if (content.intro) {
+  <section class="intro" [innerHTML]="content.intro"></section>
+}
 
-<mat-card appearance="outlined" *ngFor="let picture of content.pictures; let i = index">
+@for (picture of content.pictures; track picture; let i = $index) {
+  <mat-card appearance="outlined">
     <img mat-card-image [src]="content.path + '/' + picture.path">
     <mat-card-title>
-        <span>{{ picture.title }}</span>
-        <span class="published">{{ picture.date | date:'mediumDate' }}</span>
+      <span>{{ picture.title }}</span>
+      <span class="published">{{ picture.date | date:'mediumDate' }}</span>
     </mat-card-title>
     <mat-card-content [innerHTML]="picture.description"></mat-card-content>
     <span class="slide-counter">{{ i + 1 }}</span>
-</mat-card>
+  </mat-card>
+}
