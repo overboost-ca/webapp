@@ -45,14 +45,15 @@ section.intro {
 }
 
 /* Pad the cards slightly wider than the intro */
-.mat-card {
+.mat-mdc-card {
     margin: 1em 0;
+    padding-bottom: 2em;
 
     /* Switch the title layout to flex to allow right aligned date */
-    .mat-card-title {
+    .mat-mdc-card-title {
         display: flex;
         font-size: 120%;
-        margin-bottom: 0.5em;
+        margin: 0.5em 1em;
 
         /* Shrink the publishing date. */
         span.published {
@@ -78,7 +79,7 @@ $narrow-breakpoint: 440px;
 
 @media (min-width: $narrow-breakpoint) {
     /* Pads no longer have to match the screen width, add some gap there */
-    .mat-card {
+    .mat-mdc-card {
         margin: 1em 1em;
     }
 }
@@ -92,23 +93,25 @@ $wide-breakpoint: 1200px;
         max-width: 1320px;
     }
 
-    /* Set the card height to the average image size */
-    .mat-card {
+    /* Set the card height to the average image size, turn off flex to allow left floating images */
+    .mat-mdc-card {
+        display: block;
         height: 600px;
         margin: 1.5em 2em;
+        padding-bottom: 0;
 
         /* Align the image to the left side of the container, matching its height */
-        .mat-card-image {
+        .mat-mdc-card-image {
             border-bottom-left-radius: inherit;
             border-top-right-radius: unset;
             float: left;
-            height: calc(100% + 32px);
-            padding-right: 40px;
+            height: 100%;
+            padding-right: 2em;
             width: unset;
         }
 
         /* Pad the title at the top some more */
-        .mat-card-title {
+        .mat-mdc-card-title {
             margin-top: 0.5em;
         }
     }

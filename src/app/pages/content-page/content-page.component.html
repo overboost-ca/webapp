@@ -10,7 +10,7 @@
 
 <section *ngIf="content.intro" class="intro" [innerHTML]="content.intro"></section>
 
-<mat-card *ngFor="let picture of content.pictures; let i = index">
+<mat-card appearance="outlined" *ngFor="let picture of content.pictures; let i = index">
     <img mat-card-image [src]="content.path + '/' + picture.path">
     <mat-card-title>
         <span>{{ picture.title }}</span>

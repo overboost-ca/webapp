@@ -8,7 +8,7 @@
 }
 
 /* Pad text sections */
-section {
+section, mat-tree {
     margin: 1em 2em;
 }
 
@@ -16,6 +16,11 @@ section {
     /* Hide nested nodes */
     .ovr-tree-invisible {
         display: none;
+    }
+
+    /* The default height of 48px is too much */
+    .mat-tree-node {
+        min-height: 32px;
     }
 
     /* Offset nested nodes by the width of the chevron */
