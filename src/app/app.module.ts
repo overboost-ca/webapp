@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { redirectInitializerProvider } from './redirect.initializer';
 import { DataModule } from './data/data.module';
 import { ContentPageComponent } from './pages/content-page/content-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -31,7 +32,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     AppRoutingModule,
     DataModule
   ],
-  providers: [],
+  providers: [redirectInitializerProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
