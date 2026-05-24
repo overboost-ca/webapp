@@ -21,6 +21,15 @@ section, mat-tree {
     /* The default height of 48px is too much */
     .mat-tree-node {
         min-height: 32px;
+
+        /* Align tree text when it wraps */
+        .mat-mdc-button {
+            align-items: start;
+            height: unset;
+            padding-bottom: 6px;
+            padding-top: 6px;
+            text-align: left;
+        }
     }
 
     /* Offset nested nodes by the width of the chevron */
